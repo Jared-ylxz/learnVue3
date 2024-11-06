@@ -1,15 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <el-container>
+    <el-header>
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  :ellipsis="true" @select="handleSelect">
+        <el-menu-item index="home">首页</el-menu-item>
+        <el-menu-item index="currencyExchange">兑换货币</el-menu-item>
+        <el-menu-item index="news">查看新闻</el-menu-item>
+        <el-menu-item index="login" v-if="!authStore.isAuthenticated">登录</el-menu-item>
+        <el-menu-item index="login">登录</el-menu-item>
+        <el-menu-item index="register">注册</el-menu-item>
+        <el-menu-item index="logout">退出</el-menu-item>
+      </el-menu>
+    </el-header>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
+  </el-container> -->
+  <div id="app">
+    <button @click="increment">
+      Count is: {{ count }}
+    </button>
+    <div>
+      <span>Message: {{ msg }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const count = ref(0);
+    var msg = 'Hello Vue 3.0!';
+
+    function increment() {
+      count.value++;
+      }
+
+    return {
+      count,
+      msg,
+      increment,
+    };
   }
 }
 </script>
