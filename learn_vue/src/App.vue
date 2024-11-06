@@ -16,11 +16,15 @@
     </el-main>
   </el-container> -->
   <div id="app">
-    <button @click="increment">
-      Count is: {{ count }}
-    </button>
-    <div>
+    <span>Count is: {{ count }}</span>
+    <button @click="increment" :disabled="count >= 10">Plus</button>
+    <button @click="decrease" :disabled="count <= 0">Minus</button>
+    <div id="app2">
       <span>Message: {{ msg }}</span>
+    </div>
+    <div>
+      <input v-model="msg" placeholder="edit me">
+      <p>New message is: {{ msg }}</p>
     </div>
   </div>
 </template>
@@ -38,10 +42,15 @@ export default {
       count.value++;
       }
 
+    function decrease() {
+      count.value--;
+      }
+
     return {
       count,
       msg,
       increment,
+      decrease,
     };
   }
 }
@@ -55,5 +64,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#app2 {
+  color: royalblue;
 }
 </style>
