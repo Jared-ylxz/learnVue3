@@ -1,11 +1,10 @@
 <template>
-  <!-- <el-container>
+  <el-container>
     <el-header>
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  :ellipsis="true" @select="handleSelect">
         <el-menu-item index="home">首页</el-menu-item>
         <el-menu-item index="currencyExchange">兑换货币</el-menu-item>
         <el-menu-item index="news">查看新闻</el-menu-item>
-        <el-menu-item index="login" v-if="!authStore.isAuthenticated">登录</el-menu-item>
         <el-menu-item index="login">登录</el-menu-item>
         <el-menu-item index="register">注册</el-menu-item>
         <el-menu-item index="logout">退出</el-menu-item>
@@ -14,7 +13,6 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-  </el-container> -->
   <div id="app">
     <span>Count is: {{ count }}</span>
     <button @click="increment" :disabled="count >= 10">Plus</button>
@@ -27,6 +25,7 @@
       <p>New message is: {{ msg }}</p>
     </div>
   </div>
+  </el-container>
 </template>
 
 <script>
